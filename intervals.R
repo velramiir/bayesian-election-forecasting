@@ -25,7 +25,7 @@ for(s in state_data$State) {
     state_mean = inv_logit(mean(state_polls$alpha))
     state_high = inv_logit(mean(state_polls$alpha) + 1.96 * sd(state_polls$alpha))
     state_low = inv_logit(mean(state_polls$alpha) - 1.96 * sd(state_polls$alpha))
-    poll_intervals = poll_intervals %>% bind_rows(list(mean=state_mean, high=state_high, low=state_low, state=s, type="likelihood"))
+    poll_intervals = poll_intervals %>% bind_rows(list(mean=state_mean, high=state_high, low=state_low, state=s, type="polls"))
 }
 
 # taken from TheEconomist/us-potus-model
